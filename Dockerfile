@@ -28,7 +28,7 @@ ENV CUDA_HOME=$CONDA_PREFIX
 
 ENV PATH=/usr/local/cuda/bin:$PATH
 
-RUN cd GroundingDINO/ && python -m pip install .
+RUN cd GroundingDinoPvt/ && python -m pip install .
 
 COPY docker_test.py docker_test.py
 
