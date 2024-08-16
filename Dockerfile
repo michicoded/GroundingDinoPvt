@@ -32,4 +32,6 @@ RUN mkdir weights ; cd weights ; wget -q https://github.com/IDEA-Research/Ground
 
 RUN python -m pip install .
 
-CMD [ "python", "docker_test.py" ]
+WORKDIR /opt/program/GroundingDinoPvt/lizards
+
+CMD [ "python", "lizardtest.py" ]
