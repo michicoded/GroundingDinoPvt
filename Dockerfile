@@ -21,14 +21,14 @@ WORKDIR /opt/program
 
 RUN git clone https://github.com/michicoded/GroundingDinoPvt.git
 
-RUN mkdir weights ; cd weights ; wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth ; cd ..
-
 RUN conda install -c "nvidia/label/cuda-12.1.1" cuda -y
 ENV CUDA_HOME=$CONDA_PREFIX
 
 ENV PATH=/usr/local/cuda/bin:$PATH
 
 WORKDIR /opt/program/GroundingDinoPvt
+
+RUN mkdir weights ; cd weights ; wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth ; cd ..
 
 RUN python -m pip install .
 
